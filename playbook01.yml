@@ -1,0 +1,10 @@
+---
+- hosts: 'webservers'
+  remote_user: zonder
+  tasks:
+    - name: 'Install ngnix'
+      apt:
+        name: 'ngnix'
+        state: 'present'
+      become: true 
+
