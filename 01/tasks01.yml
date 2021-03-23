@@ -1,0 +1,22 @@
+---
+- hosts: all
+  tasks:
+  - name: create a file on remote machine
+    file:
+      dest: /tmp/file_01
+      state: '{{ file_state }}'
+
+- hosts: web
+  tasks:
+  - name: create file on web machine
+    file:
+      dest: /tmp/file_web01
+      state: '{{ file_state }}'
+       
+- hosts: db
+  tasks:
+  - name: create file on db machine
+    file:
+      dest: /tmp/file_db01
+      state: '{{ file_state }}'
+              
